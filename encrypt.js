@@ -1,4 +1,5 @@
 let text_to = document.getElementById("text_to")
+let encrypt_button = document.getElementById("encrypt")
 
 function encrypt(){
     let array_text;
@@ -53,4 +54,4 @@ function encrypt(){
 
 }
 
-encrypt()
+encrypt_button.onclick = encrypt;
