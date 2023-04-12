@@ -1,5 +1,8 @@
-let text_to = document.getElementById("text_to")
-let encrypt_button = document.getElementById("encrypt")
+let text_to = document.getElementById("text_to");
+let encrypt_button = document.getElementById("encrypt");
+let decrypt_button = document.getElementById("decrypt");
+let textencrypt = document.getElementById("textencrypt");
+let textdecrypt = document.getElementById("textdecrypt");
 
 function encrypt(){
     let array_text;
@@ -50,8 +53,30 @@ function encrypt(){
     }
     // join() convierte el array en una cadena de texto. Las comillas van vacías para que la cadena de texto sea tal cual el array. 
     let cadena = array_text.join("");
+    textencrypt.innerHTML = cadena;
     console.log(cadena)
 
 }
 
+function decrypt(){
+    let contenido_decrypt = text_to.value;
+    let array_decrypt = contenido_decrypt.split(" ");
+
+    for(let j = 0; j < array_decrypt.length; j++){
+        array_decrypt[j] = array_decrypt[j].replace(/ai/g, "a")
+        array_decrypt[j] = array_decrypt[j].replace(/enter/g, "e")
+        array_decrypt[j] = array_decrypt[j].replace(/imes/g, "i")
+        array_decrypt[j] = array_decrypt[j].replace(/ober/g, "o")
+        array_decrypt[j] = array_decrypt[j].replace(/ufat/g, "u")
+    }
+
+    let cadena_decrypt = array_decrypt.join(" ");
+    textdecrypt.innerHTML = cadena_decrypt;
+    console.log(cadena_decrypt)
+}
+
+
 encrypt_button.onclick = encrypt;
+decrypt_button.onclick = decrypt;
+
+// fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!
