@@ -122,8 +122,8 @@ main{
 }
 
 .vector3{
-    width: 336px;
-    height: 304px;
+    max-width: 336px;
+    max-width: 304px;
 }
 
 .caja2 div:first-child{
