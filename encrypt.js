@@ -2,9 +2,11 @@ let text_to = document.getElementById("text_to");
 let encrypt_button = document.getElementById("encrypt");
 let decrypt_button = document.getElementById("decrypt");
 let textencrypt = document.getElementById("textencrypt");
-let textdecrypt = document.getElementById("textdecrypt");
+let quitar_contenido = document.getElementById("no_content")
 
 function encrypt(){
+    textencrypt.innerHTML = ""
+    quitar_contenido.remove()
     let contenido = text_to.value;
     contenido = contenido.toLowerCase();
 
@@ -58,6 +60,8 @@ function encrypt(){
 }
 
 function decrypt(){
+    textencrypt.innerHTML = ""
+    quitar_contenido.remove()
     let contenido_decrypt = text_to.value;
     let array_decrypt = contenido_decrypt.split(" ");
 
@@ -74,7 +78,7 @@ function decrypt(){
 
 
     let cadena_decrypt = array_decrypt.join(" ");
-    textdecrypt.innerHTML = cadena_decrypt;
+    textencrypt.innerHTML = cadena_decrypt;
     console.log(cadena_decrypt)
 }
 

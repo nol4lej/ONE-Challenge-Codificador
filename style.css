@@ -62,6 +62,7 @@ main{
 }
 
 #encrypt{
+    cursor: pointer;
     background: #0A3871;
     border: none;
     border-radius: 24px;
@@ -76,7 +77,12 @@ main{
     color: #FFFFFF;
 }
 
+#encrypt:hover{
+    background: #174072;
+}
+
 #decrypt{
+    cursor: pointer;
     background: #D8DFE8;
     border: 1px solid #0A3871;
     border-radius: 24px;
@@ -91,11 +97,16 @@ main{
     color: #0A3871;
 }
 
+#decrypt:hover{
+    background: #c8d6e8;
+}
+
 .caja2{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
+    padding: 32px;
     width: 400px;
     height: 944px;
     background: #FFFFFF;
@@ -103,34 +114,34 @@ main{
     border-radius: 32px;
 }
 
-.caja2 > img{
+.caja2 div:last-child {
+    display: flex; /* Establecer el div hijo como un elemento flex */
+    flex-direction: column; /* Apilar los elementos verticalmente */
+    justify-content: center; /* Centrar verticalmente el contenido */
+    align-items: center; /* Centrar horizontalmente el contenido */
+}
+
+.vector3{
     width: 336px;
     height: 304px;
 }
 
-.caja2 > span{
-    position: relative;
-    width: 336px;
-    height: 58px;
-    padding-top: 32px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 120%;
-    text-align: center;
-    color: #343A40;
+.caja2 div:first-child{
+    display: flex;
+    align-self: flex-start;
+    text-align: start;
+
 }
 
-.caja2 > span:last-child{
-    width: 336px;
-    height: 48px;
-    padding-top: 16px;
+/* #textencrypt {
+
+    flex-direction: column;
+    overflow: auto;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 24px;
     line-height: 150%;
-    text-align: center;
     color: #495057;
-}
+  }
+   */
