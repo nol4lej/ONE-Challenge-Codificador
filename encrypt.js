@@ -5,7 +5,6 @@ let textencrypt = document.getElementById("textencrypt");
 let textdecrypt = document.getElementById("textdecrypt");
 
 function encrypt(){
-    let array_text;
     let contenido = text_to.value;
     contenido = contenido.toLowerCase();
 
@@ -18,7 +17,7 @@ function encrypt(){
     contenido = contenido.replace(/[óòöô]/g, "o");
     contenido = contenido.replace(/[úùüû]/g, "u");
 
-    contenido = contenido.replace(/[^\w\s]/gi, ''); // reemplaza caracteres especiales con un espacio vacío
+    contenido = contenido.replace(/[^\w\s]/gi, ''); // reemplaza caract eres especiales con un espacio vacío
     // "^" representa todos los caracteres que no son \w\s
     // (\w representa letras y números y \s representa espacios en blanco)
     // la opción g hace que la búsqueda sea global para reemplazar todas las instancias en la cadena, mientras que la opción i hace que la búsqueda sea insensible a mayúsculas y minúsculas.
@@ -28,7 +27,7 @@ function encrypt(){
     text_to.value = contenido;
 
     //split() convierte la cadena de texto en un array.
-    array_text = text_to.value.split("");
+    let array_text = text_to.value.split("");
 
     for(let i = 0; i < array_text.length; i++){
         switch(array_text[i]){
@@ -62,6 +61,9 @@ function decrypt(){
     let contenido_decrypt = text_to.value;
     let array_decrypt = contenido_decrypt.split(" ");
 
+    // En vez de for, tambien se pude recorrer el array con la funcion map() y el método forEach():
+    // CON MAP: array_decrypt = array_decrypt.map(str => str.replace(/ai/g, "a").replace(/enter/g, "e").replace(/imes/g, "i").replace(/ober/g, "o").replace(/ufat/g, "u"));
+    // CON FOREACH: array_decrypt.forEach(function(element, index, arr) {arr[index] = element.replace(/ai/g, "a").replace(/enter/g, "e").replace(/imes/g, "i").replace(/ober/g, "o").replace(/ufat/g, "u");});
     for(let j = 0; j < array_decrypt.length; j++){
         array_decrypt[j] = array_decrypt[j].replace(/ai/g, "a")
         array_decrypt[j] = array_decrypt[j].replace(/enter/g, "e")
@@ -69,6 +71,7 @@ function decrypt(){
         array_decrypt[j] = array_decrypt[j].replace(/ober/g, "o")
         array_decrypt[j] = array_decrypt[j].replace(/ufat/g, "u")
     }
+
 
     let cadena_decrypt = array_decrypt.join(" ");
     textdecrypt.innerHTML = cadena_decrypt;
