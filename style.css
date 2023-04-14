@@ -119,6 +119,7 @@ main{
     flex-direction: column; /* Apilar los elementos verticalmente */
     justify-content: center; /* Centrar verticalmente el contenido */
     align-items: center; /* Centrar horizontalmente el contenido */
+    max-width: 100%;
 }
 
 .vector3{
