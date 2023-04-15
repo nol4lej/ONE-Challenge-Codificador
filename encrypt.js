@@ -4,6 +4,9 @@ let decrypt_button = document.getElementById("decrypt");
 let quitar_contenido = document.getElementById("no_content");
 let textencrypt = document.getElementById("textencrypt");
 let copybutton = document.getElementById("copybutton");
+let vector3 = document.getElementById("vector3");
+let text1 = document.getElementById("text1")
+let text2 = document.getElementById("text2")
 
 
 function encrypt(){
@@ -84,7 +87,9 @@ function decrypt(){
 
 function comprobar(cadena){
     if(cadena){
-        quitar_contenido.remove()
+        text1.remove()
+        text2.remove()
+        vector3.remove()
         copybutton.style.visibility = "visible";
     }
 }
@@ -93,6 +98,31 @@ function copiarText(){
     let texto = textencrypt.textContent
     navigator.clipboard.writeText(texto)
 }
+
+// Agrega un event listener al objeto window para detectar el cambio de tamaño de la pantalla
+window.addEventListener("resize", function() {
+    // Si el ancho de la pantalla es menor o igual a 768px, elimina el contenedor
+    if (window.innerWidth <= 768) {
+      vector3.remove();
+    } else {
+      // Si el ancho de la pantalla es mayor a 768px y el contenedor no existe en el DOM, agrégalo de nuevo
+      if (!document.contains(vector3)) {
+        no_content.appendChild(vector3);
+      }
+    }
+});
+
+// Agregar evento input al textarea
+text_to.addEventListener('input', () => {
+    // Verificar si el valor del textarea está vacío
+    if (text_to.value === '') {
+      // Si el valor está vacío, limpiar el valor del campo de texto
+      textencrypt.innerHTML = '';
+      quitar_contenido.append(vector3, text1, text2)
+      copybutton.style.visibility = "hidden";
+    }
+  });
+
 
 encrypt_button.onclick = encrypt;
 decrypt_button.onclick = decrypt;
