@@ -116,7 +116,7 @@ main{
 .no_content{
     display: flex;
     flex-direction: column;
-     align-self: center;
+    align-self: center;
 }
 
 .vector3{
@@ -191,4 +191,31 @@ main{
     max-width: 400px;
     max-height: 450px;
     word-wrap: break-word;
+}
+
+@media (max-width: 767px) {
+    .caja1 > div:last-child{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #encrypt, #decrypt{
+        width: 300px;
+        height: 67px;
+    }
+
+    .caja2{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        top: 64px;
+        width: 90%;
+        height: 186px;
+        padding: 32px;
+    }
+
+    .vector3{
+
+    }
+
 }

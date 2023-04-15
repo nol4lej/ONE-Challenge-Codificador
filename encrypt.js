@@ -86,9 +86,9 @@ function decrypt(){
 }
 
 function comprobar(cadena){
-    if(cadena && text1 && text2 && vector3){
-        text1.remove()
-        text2.remove()
+    if(cadena){
+        text1.innerHTML = ""
+        text2.innerHTML = ""
         vector3.remove()
         copybutton.style.visibility = "visible";
     }
@@ -118,6 +118,8 @@ text_to.addEventListener('input', () => {
     if (text_to.value === '') {
       // Si el valor está vacío, limpiar el valor del campo de texto
       textencrypt.innerHTML = '';
+      text1.innerHTML = "Ningún mensaje fue encontrado"
+      text2.innerHTML = "Ingresa el texto que deseas encriptar o desencriptar."
       quitar_contenido.append(vector3, text1, text2)
       copybutton.style.visibility = "hidden";
     }
