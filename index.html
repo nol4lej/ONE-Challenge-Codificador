@@ -8,9 +8,14 @@
     <title>Challenge ONE - Encriptador de Texto</title>
 </head>
 <body>
-    <main class="">
-        <div class="vector">
-            <img src="img/Vector.png" alt="">
+
+    <div class="loading">
+		<div class="loader"></div>
+	</div>
+
+    <main class="fade-in">
+        <div class="vector fade-in-down">
+            <a href="https://www.aluracursos.com/"><img src="img/Vector.png" alt=""></a>
         </div>
         <div class="caja1">
             <div class="">
@@ -24,15 +29,12 @@
                 <button class="" id="encrypt">Encriptar</button>
                 <button class="" id="decrypt">Desencriptar</button>
             </div>
-
         </div>
         <div id="caja2" class="caja2">
-
             <div id="caja_text">
                 <p id="textencrypt"></p>
             </div>
-
-            <div class="no_content" id="no_content">
+            <div class="no_content fade-in" id="no_content">
                 <img class="vector3" id="vector3" src="img/Vector3.png" alt="">
                 <span class="text1" id="text1">Ningún mensaje fue encontrado</span>
                 <span class="text2" id="text2">Ingresa el texto que deseas encriptar o desencriptar.</span>
@@ -41,10 +43,19 @@
             <button id="copybutton" class="copybutton">Copiar</button>
         </div>
     </main>
+    <span class="by">Created by <a href="https://www.linkedin.com/in/nolasco-medina-57bbb5261/">Nolasco Medina</a></span>
+
 
 
 </body>
 
+<script>
+    window.addEventListener("load", function() {
+    document.body.classList.add("loaded");
+});
+</script>
+
 <script src="encrypt.js"></script>
+
 
 </html>

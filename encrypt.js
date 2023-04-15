@@ -5,9 +5,6 @@ let no_content = document.getElementById("no_content");
 let textencrypt = document.getElementById("textencrypt");
 let copybutton = document.getElementById("copybutton");
 let vector3 = document.getElementById("vector3");
-let text1 = document.getElementById("text1")
-let text2 = document.getElementById("text2")
-
 
 function encrypt(){
     textencrypt.innerHTML = ""
