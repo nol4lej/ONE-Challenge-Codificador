@@ -1,7 +1,7 @@
 let text_to = document.getElementById("text_to");
 let encrypt_button = document.getElementById("encrypt");
 let decrypt_button = document.getElementById("decrypt");
-let quitar_contenido = document.getElementById("no_content");
+let no_content = document.getElementById("no_content");
 let textencrypt = document.getElementById("textencrypt");
 let copybutton = document.getElementById("copybutton");
 let vector3 = document.getElementById("vector3");
@@ -58,9 +58,7 @@ function encrypt(){
     }
     // join() convierte el array en una cadena de texto. Las comillas van vacías para que la cadena de texto sea tal cual el array. 
     let cadena = array_text.join("");
-    // textencrypt.textContent = cadena
     textencrypt.innerText = cadena
-    // textencrypt.innerHTML = cadena;
     comprobar(cadena)
 }
 
@@ -87,9 +85,7 @@ function decrypt(){
 
 function comprobar(cadena){
     if(cadena){
-        text1.innerHTML = ""
-        text2.innerHTML = ""
-        vector3.remove()
+        no_content.style.display = "none"
         copybutton.style.visibility = "visible";
     }
 }
@@ -99,7 +95,22 @@ function copiarText(){
     navigator.clipboard.writeText(texto)
 }
 
-// Agrega un event listener al objeto window para detectar el cambio de tamaño de la pantalla
+text_to.addEventListener('input', () => {
+    if (text_to.value === '') {
+      textencrypt.innerHTML = '';
+      no_content.style.display = "flex"
+      copybutton.style.visibility = "hidden";
+    }
+  });
+
+encrypt_button.onclick = encrypt;
+decrypt_button.onclick = decrypt;
+copybutton.onclick = copiarText;
+
+
+// RESPONSIVE - NO LISTO
+// RESPONSIVE - NO LISTO
+// Agregar un event listener al objeto window para detectar el cambio de tamaño de la pantalla
 window.addEventListener("resize", function() {
     // Si el ancho de la pantalla es menor o igual a 768px, elimina el contenedor
     if (window.innerWidth <= 768) {
@@ -111,23 +122,8 @@ window.addEventListener("resize", function() {
       }
     }
 });
+// RESPONSIVE - NO LISTO
+// RESPONSIVE - NO LISTO
 
-// Agregar evento input al textarea
-text_to.addEventListener('input', () => {
-    // Verificar si el valor del textarea está vacío
-    if (text_to.value === '') {
-      // Si el valor está vacío, limpiar el valor del campo de texto
-      textencrypt.innerHTML = '';
-      text1.innerHTML = "Ningún mensaje fue encontrado"
-      text2.innerHTML = "Ingresa el texto que deseas encriptar o desencriptar."
-      quitar_contenido.append(vector3, text1, text2)
-      copybutton.style.visibility = "hidden";
-    }
-  });
-
-
-encrypt_button.onclick = encrypt;
-decrypt_button.onclick = decrypt;
-copybutton.onclick = copiarText;
 
 // fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!
