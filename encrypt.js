@@ -86,7 +86,7 @@ function decrypt(){
 }
 
 function comprobar(cadena){
-    if(cadena){
+    if(cadena && text1 && text2 && vector3){
         text1.remove()
         text2.remove()
         vector3.remove()
