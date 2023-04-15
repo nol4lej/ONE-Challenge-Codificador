@@ -1,12 +1,13 @@
 let text_to = document.getElementById("text_to");
 let encrypt_button = document.getElementById("encrypt");
 let decrypt_button = document.getElementById("decrypt");
+let quitar_contenido = document.getElementById("no_content");
 let textencrypt = document.getElementById("textencrypt");
-let quitar_contenido = document.getElementById("no_content")
+let copybutton = document.getElementById("copybutton");
+
 
 function encrypt(){
     textencrypt.innerHTML = ""
-    quitar_contenido.remove()
     let contenido = text_to.value;
     contenido = contenido.toLowerCase();
 
@@ -54,14 +55,14 @@ function encrypt(){
     }
     // join() convierte el array en una cadena de texto. Las comillas van vacías para que la cadena de texto sea tal cual el array. 
     let cadena = array_text.join("");
-    textencrypt.innerHTML = cadena;
-    console.log(cadena)
-
+    // textencrypt.textContent = cadena
+    textencrypt.innerText = cadena
+    // textencrypt.innerHTML = cadena;
+    comprobar(cadena)
 }
 
 function decrypt(){
     textencrypt.innerHTML = ""
-    quitar_contenido.remove()
     let contenido_decrypt = text_to.value;
     let array_decrypt = contenido_decrypt.split(" ");
 
@@ -76,14 +77,25 @@ function decrypt(){
         array_decrypt[j] = array_decrypt[j].replace(/ufat/g, "u")
     }
 
-
     let cadena_decrypt = array_decrypt.join(" ");
     textencrypt.innerHTML = cadena_decrypt;
-    console.log(cadena_decrypt)
+    comprobar(cadena_decrypt)
 }
 
+function comprobar(cadena){
+    if(cadena){
+        quitar_contenido.remove()
+        copybutton.style.visibility = "visible";
+    }
+}
+
+function copiarText(){
+    let texto = textencrypt.textContent
+    navigator.clipboard.writeText(texto)
+}
 
 encrypt_button.onclick = encrypt;
 decrypt_button.onclick = decrypt;
+copybutton.onclick = copiarText;
 
 // fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!
