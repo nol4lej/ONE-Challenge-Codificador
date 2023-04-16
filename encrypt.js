@@ -2,9 +2,11 @@ let text_to = document.getElementById("text_to");
 let encrypt_button = document.getElementById("encrypt");
 let decrypt_button = document.getElementById("decrypt");
 let no_content = document.getElementById("no_content");
-let textencrypt = document.getElementById("textencrypt");
+// let textencrypt = document.getElementById("textencrypt");
 let copybutton = document.getElementById("copybutton");
 let vector3 = document.getElementById("vector3");
+
+let caja2 = document.getElementById("caja2")
 
 function encrypt(){
     textencrypt.innerHTML = ""
@@ -83,7 +85,7 @@ function decrypt(){
 function comprobar(cadena){
     if(cadena){
         no_content.style.display = "none"
-        copybutton.style.visibility = "visible";
+        copybutton.style.display = "block";
     }
 }
 
@@ -96,7 +98,7 @@ text_to.addEventListener('input', () => {
     if (text_to.value === '') {
       textencrypt.innerHTML = '';
       no_content.style.display = "flex"
-      copybutton.style.visibility = "hidden";
+      copybutton.style.display = "none";
     }
   });
 
@@ -110,17 +112,22 @@ copybutton.onclick = copiarText;
 // Agregar un event listener al objeto window para detectar el cambio de tamaño de la pantalla
 window.addEventListener("resize", function() {
     // Si el ancho de la pantalla es menor o igual a 768px, elimina el contenedor
-    if (window.innerWidth <= 768) {
-      vector3.remove();
+    if (window.innerWidth <= 1350) {
+      vector3.style.display = "none"
     } else {
-      // Si el ancho de la pantalla es mayor a 768px y el contenedor no existe en el DOM, agrégalo de nuevo
-      if (!document.contains(vector3)) {
-        no_content.appendChild(vector3);
-      }
+        vector3.style.display = "block"
+
     }
 });
 // RESPONSIVE - NO LISTO
 // RESPONSIVE - NO LISTO
+
+window.addEventListener("load", function() {
+    document.body.classList.add("loaded");
+    if (window.innerWidth >= 1351) {
+        vector3.style.display = "block"
+      } 
+});
 
 
 // fenterlimescimesdaidenters poberr enternfrenterntair enterstenter dentersaifimesober y haibenterrlober cobernclufatimesdober cobern enterximestober!
