@@ -106,9 +106,6 @@ encrypt_button.onclick = encrypt;
 decrypt_button.onclick = decrypt;
 copybutton.onclick = copiarText;
 
-
-// RESPONSIVE - NO LISTO
-// RESPONSIVE - NO LISTO
 // Agregar un event listener al objeto window para detectar el cambio de tamaño de la pantalla
 window.addEventListener("resize", function() {
     // Si el ancho de la pantalla es menor o igual a 768px, elimina el contenedor
@@ -119,14 +116,12 @@ window.addEventListener("resize", function() {
 
     }
 });
-// RESPONSIVE - NO LISTO
-// RESPONSIVE - NO LISTO
 
 window.addEventListener("load", function() {
     document.body.classList.add("loaded");
     if (window.innerWidth >= 1351) {
         vector3.style.display = "block"
-      } 
+      }
 });
 
 
