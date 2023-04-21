@@ -6,6 +6,7 @@ let disappear_container = document.getElementById("disappear_container")
 let encrypt_container = document.getElementById("encrypt_container");
 let aside_container = document.getElementById("aside_container");
 let copy_container = document.getElementById("copy_container")
+let btn_copy = document.getElementById("btn_copy");
 
 const vocals = {
     "a": "ai",
@@ -63,9 +64,13 @@ function toComplete(){
     encrypt_container.style.display = "block"
     aside_container.style.justifyContent = "space-evenly"
     copy_container.style.display = "flex"
+}
 
-
+function copyText(){
+    let copytext = worked_text.textContent;
+    navigator.clipboard.writeText(copytext);
 }
 
 btn_encrypt.onclick = Encrypt;
 btn_decrypt.onclick = Decrypt;
+btn_copy.onclick = copyText;
