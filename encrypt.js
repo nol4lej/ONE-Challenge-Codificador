@@ -39,7 +39,10 @@ function Encrypt(){
     let encrypt_string = text_array.join("");
     console.log(encrypt_string)
     worked_text.innerText = encrypt_string;
-    toComplete();
+    if(encrypt_string){
+        toComplete();
+    }
+    // toComplete();
 }
 
 function Decrypt(){
@@ -56,7 +59,9 @@ function Decrypt(){
     }
     content_string = content_array.join(" ")
     worked_text.innerText = content_string;
-    toComplete()
+    if(content_string){
+        toComplete()
+    }
 }
 
 function toComplete(){

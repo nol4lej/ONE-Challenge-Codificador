@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/fav.ico">
     <title>Challenge ONE - Encriptador de Texto</title>
 </head>
-<body>
+<body class="fade-in">
+
+    <div class="loading">
+		<div class="loader"></div>
+	</div>
+
     <main class="main_container">
         <div class="logo_container">
             <img src="img/Vector.png" alt="">
@@ -29,10 +35,10 @@
         </section>
 
         <section class="aside_container" id="aside_container">
-            <div class="encrypt_container" id="encrypt_container">
+            <div class="encrypt_container fade-in" id="encrypt_container">
                 <p class="worked_text" id="worked_text"></p>
             </div>
-            <div class="disappear_container" id="disappear_container">
+            <div class="disappear_container fade-in" id="disappear_container">
                 <div class="img_container">
                     <img src="img/Vector3.png" alt="">
                 </div>
@@ -49,6 +55,12 @@
 
     </main>
 </body>
+
+<script>
+    window.addEventListener("load", function() {
+    document.body.classList.add("loaded");
+});
+</script>
 
 <script src="encrypt.js"></script>
 
