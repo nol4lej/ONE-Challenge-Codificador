@@ -18,7 +18,8 @@ const vocals = {
 
 text_input.addEventListener("input", function() {
     // Esta expresión regular eliminará todos los caracteres que no sean letras minúsculas, la letra "ñ", espacios y tabulaciones.
-    this.value = this.value.replace(/[^a-zñ\s]/g, '');
+    this.value = this.value.replace(/[^a-zA-Zñ\s]/g, '');
+    this.value = this.value.toLowerCase()
     if(this.value === ""){
         worked_text.innerText = "";
         disappear_container.style.display = "flex";
