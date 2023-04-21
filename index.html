@@ -4,53 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/Vector.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <title>Challenge ONE - Encriptador de Texto</title>
 </head>
 <body>
-
-    <div class="loading">
-		<div class="loader"></div>
-	</div>
-
-    <main class="fade-in">
-        <div class="vector fade-in-down">
-            <a href="https://www.aluracursos.com/"><img src="img/Vector.png" alt=""></a>
+    <main class="main_container">
+        <div class="logo_container">
+            <img src="img/Vector.png" alt="">
         </div>
-        <div class="caja1">
-            <div class="">
-                <textarea name="" id="text_to" placeholder="Ingrese el texto aquí"></textarea>
+        <section class="section_container">
+            <div class="btn-input_container">
+                <div class="input_container">
+                    <textarea name="" id="input" placeholder="Ingrese el texto aquí"></textarea>
+                </div>
+                <div class="alert_container">
+                    <img src="img/Vector2.png" alt="">
+                    <span>Solo letras minúsculas y sin acentos</span>
+                </div>
+                <div class="buttons_container">
+                    <button class="btn_encrypt" id="btn_encrypt">Encriptar</button>
+                    <button class="btn_decrypt" id="btn_decrypt">Desencriptar</button>
+                </div>
             </div>
-            <div class="">
-                <img src="img/Vector2.png" alt="">
-                <span>Solo letras minúsculas y sin acentos</span>
+        </section>
+
+        <section class="aside_container" id="aside_container">
+            <div class="encrypt_container" id="encrypt_container">
+                <p class="worked_text" id="worked_text"></p>
             </div>
-            <div class="">
-                <button class="" id="encrypt">Encriptar</button>
-                <button class="" id="decrypt">Desencriptar</button>
+            <div class="disappear_container" id="disappear_container">
+                <div class="img_container">
+                    <img src="img/Vector3.png" alt="">
+                </div>
+                <div class="text_container">
+                    <h1>Ningún mensaje fue encontrado</h1>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
             </div>
-        </div>
-        <div id="caja2" class="caja2">
-            <div id="caja_text">
-                <p id="textencrypt"></p>
-            </div>
-            <div class="no_content fade-in" id="no_content">
-                <img class="vector3" id="vector3" src="img/Vector3.png" alt="">
-                <span class="text1" id="text1">Ningún mensaje fue encontrado</span>
-                <span class="text2" id="text2">Ingresa el texto que deseas encriptar o desencriptar.</span>
+            <div class="copy_container" id="copy_container">
+                <button class="btn_copy" id="btn_copy">Desencriptar</button>
             </div>
 
-            <button id="copybutton" class="copybutton">Copiar</button>
-        </div>
+        </section>
+
     </main>
-    <!-- <span class="by">Created by <a href="https://www.linkedin.com/in/nolasco-medina-57bbb5261/">Nolasco Medina</a></span> -->
-
-
-
 </body>
 
 <script src="encrypt.js"></script>
-
 
 </html>
